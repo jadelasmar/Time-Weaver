@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
 { 
     public static GameManager Instance;
     
-    [SerializeField] private GameObject player;
-    
     private void Awake()
     {
         if(Instance == null)
@@ -50,7 +48,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void LevelDone()
+    public void LevelComplete()
     {
         Invoke(nameof(LoadNextScene),1);
     }

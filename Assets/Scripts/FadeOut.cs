@@ -8,12 +8,15 @@ using UnityEngine.UI;
 
 public class FadeOut : MonoBehaviour 
 {
+    public static FadeOut Instance;
+
     public SpriteRenderer fadeSprite;
     public TextMeshProUGUI gameOverText;
     private GameManager _gameManager;
 
     private void Start()
     {
+        Instance = this;
         _gameManager = GameManager.Instance;
 
     }
