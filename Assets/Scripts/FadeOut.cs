@@ -56,4 +56,14 @@ public class FadeOut : MonoBehaviour
     {
         StartCoroutine(FadeToGameOver());
     }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.SetActive(false);
+            FadeAndLoadGameOver();
+            
+        }
+    }
 }
