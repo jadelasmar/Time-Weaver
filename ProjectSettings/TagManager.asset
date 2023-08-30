@@ -49,21 +49,24 @@ TagManager:
   - name: -2 Midground
     uniqueID: 2121455433
     locked: 0
-  - name: -1 Foreground
+  - name: -1 Midground 2
+    uniqueID: 1682307357
+    locked: 0
+  - name: 0 Foreground
     uniqueID: 3682935831
     locked: 0
-  - name: 0 Ceiling
+  - name: 1 Ceiling
     uniqueID: 2693118855
     locked: 0
-  - name: 1 Ground
+  - name: 2 Ground
     uniqueID: 3357839395
     locked: 0
-  - name: 2 Obstacles
+  - name: 3 Obstacles
     uniqueID: 4068281411
     locked: 0
-  - name: 3 UI
+  - name: 4 UI
     uniqueID: 2556894957
     locked: 0
-  - name: 4 Main
+  - name: 5 Main
     uniqueID: 2150465263
     locked: 0
