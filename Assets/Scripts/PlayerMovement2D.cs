@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerMovement2D : MonoBehaviour
 {
     public CharacterController2D controller;
+    public bool canMove;
+    
     private Animator _animator;
 
     public float runSpeed = 40f;
@@ -21,13 +23,16 @@ public class PlayerMovement2D : MonoBehaviour
 
     void Update()
     {
-        _horizontalMove = Input.GetAxisRaw("Horizontal")*runSpeed;
-
-        _animator.SetFloat("Speed",Mathf.Abs(_horizontalMove));
-        if (Input.GetButtonDown("Jump"))
+        if(canMove)
         {
-            _jump = true;
-            _animator.SetBool("isJumping",true);
+            _horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+            _animator.SetFloat("Speed", Mathf.Abs(_horizontalMove));
+            if (Input.GetButtonDown("Jump"))
+            {
+                _jump = true;
+                _animator.SetBool("isJumping", true);
+            }
         }
     }
 
@@ -38,8 +43,11 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(_horizontalMove*Time.fixedDeltaTime,_jump);
-        _jump = false;
+        if(canMove)
+        {
+            controller.Move(_horizontalMove * Time.fixedDeltaTime, _jump);
+            _jump = false;
+        }
     }
     
 

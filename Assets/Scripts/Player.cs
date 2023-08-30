@@ -10,4 +10,9 @@ public class Player : MonoBehaviour
     {
         LeanTween.scale(gameObject, Vector2.one, 0.5f);
     }
+
+   public void EnableMovement(bool move)
+   {
+       GetComponent<PlayerMovement2D>().canMove = move;
+   }
 }
