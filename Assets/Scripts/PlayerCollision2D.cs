@@ -16,6 +16,15 @@ public class PlayerCollision2D : MonoBehaviour
         _gameManager = GameManager.Instance;
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            FadeOut.Instance.FadeAndLoadGameOver();
+            StartCoroutine(EnableMovement(false));
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Fall"))
@@ -26,33 +35,23 @@ public class PlayerCollision2D : MonoBehaviour
         
         if (other.gameObject.name == ("Start Portal"))
         {
-            Invoke(nameof(enableMovement), (float)0.5);
+            StartCoroutine(EnableMovement(true));
         }
     }
 
-    private void enableMovement()
+    private IEnumerator EnableMovement(bool move)
     {
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-        GetComponent<PlayerMovement2D>().enabled = true;
-        GetComponent<CharacterController2D>().enabled = true;
-    }
-
-    IEnumerator MoveToTarget(Transform portal)
-    {
-        Vector3 portalCenter = portal.GetComponent<Collider2D>().bounds.center;
-
-        while (Vector2.Distance(transform.position, portalCenter) > 0.1f) {
-
-            Vector2 direction = (portalCenter - transform.position).normalized;
-
-            _rigidbody2D.AddForce(direction * 2);
-  
-            yield return null;
+        if (move)
+        {
+            yield return new WaitForSeconds(0.5f);
+            GetComponent<PlayerMovement2D>().enabled = true;
+            GetComponent<CharacterController2D>().enabled = true;
+            _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-
-        _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
-        GetComponent<PlayerMovement2D>().enabled = false;
-        GetComponent<CharacterController2D>().enabled = false;
-        _gameManager.LevelComplete();
+        else
+        {
+            GetComponent<PlayerMovement2D>().enabled = false;
+            GetComponent<CharacterController2D>().enabled = false;
+        }
     }
 }
