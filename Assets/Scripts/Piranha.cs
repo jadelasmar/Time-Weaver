@@ -32,7 +32,6 @@ public class Piranha : MonoBehaviour
             _hit = Physics2D.Raycast(transform.position, transform.right, rayLength, 1<<LayerMask.NameToLayer("Player"));
             if (_hit.collider != null && _hit.collider.gameObject.CompareTag("Player"))
             {
-                Debug.Log(_hit.transform);
                 _attacking = true;
                 ShootAnim();
             }
@@ -50,7 +49,6 @@ public class Piranha : MonoBehaviour
 
     private void ShootAnim()
     {
-        Debug.Log("shoot");
         _animator.SetTrigger("Attack");
     }
 
@@ -60,12 +58,10 @@ public class Piranha : MonoBehaviour
         LeanTween.move(_projectile, _destination, shootTime);
         while (LeanTween.isTweening(_projectile))
         {
-            Debug.Log("tweening");
             yield return null;
         }
         _projectile.SetActive(false);
         _projectile.transform.position = _initialPos;
-        Debug.Log("stopped attacking");
         _attacking = false;
 
 
