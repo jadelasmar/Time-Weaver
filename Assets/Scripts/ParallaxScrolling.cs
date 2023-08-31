@@ -6,23 +6,14 @@ using UnityEngine.Tilemaps;
 
 public class ParallaxScrolling : MonoBehaviour
 {
-    // [SerializeField] private float scrollSpeed = 0.3f;
-    // [SerializeField] private float offset = 0f;
-     [SerializeField] private GameObject viewTarget;
-    // [SerializeField] private bool lockY;
-    // private Tilemap _tilemap;
-    // private float _xPos;
-    // private float _yPos;
-
-    private float length,startPos;
-    public float parallax;
-    
-    
-
+    [SerializeField] private GameObject viewTarget;
+    [SerializeField] private float parallax;
+    [SerializeField] private bool lockY;
+    private float length, xStartPos,yStartPos;
     private void Start()
     {
-        //_tilemap = GetComponent<Tilemap>();
-        startPos = transform.position.x;
+        xStartPos = transform.position.x;
+        yStartPos = transform.position.y;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
@@ -30,19 +21,21 @@ public class ParallaxScrolling : MonoBehaviour
     {
         float temp = viewTarget.transform.position.x * (1 - parallax);
         float dist = viewTarget.transform.position.x * parallax;
-        transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
-
-        if (temp > startPos + length)
-            startPos += length;
-        else if (temp < startPos - length)
-            startPos -= length;
-    }
-
-    private void Update()
-    {
-       // _xPos = viewTarget.transform.position.x * (scrollSpeed+offset);
-       // _yPos = viewTarget.transform.position.y * (scrollSpeed+offset);
         
-        //_tilemap.transform.position = lockY ? new Vector2(_xPos, _tilemap.transform.position.y) : new Vector2(_xPos, _yPos);
+        if (lockY)
+        {
+            transform.position = new Vector3(xStartPos + dist, viewTarget.transform.position.y, transform.position.z);
+        }
+        else
+        {
+            transform.position = new Vector3(xStartPos + dist, transform.position.y, transform.position.z);
+
+        }
+        
+        if (temp > xStartPos + length)
+            xStartPos += length;
+        else if (temp < xStartPos - length)
+            xStartPos -= length;
+        
     }
 }
