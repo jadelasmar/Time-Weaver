@@ -23,6 +23,7 @@ public class FadeOut : MonoBehaviour
 
     public IEnumerator FadeToGameOver()
     {
+        yield return new WaitForSeconds(0.3f);
         float alpha = 0f;
         
         while (alpha < 1f) 
