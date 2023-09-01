@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slug : MonoBehaviour
+public class MovingEnemy : MonoBehaviour
 {
     [SerializeField] private float speed = 2f;
     [SerializeField] private float xOffset = 7f;
@@ -14,7 +14,7 @@ public class Slug : MonoBehaviour
     private int _moveDirection = 1;
 
     private SpriteRenderer _sprite;
-
+    
     private void Awake()
     {
         _sprite = GetComponent<SpriteRenderer>();
