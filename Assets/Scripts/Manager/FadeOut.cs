@@ -13,12 +13,27 @@ public class FadeOut : MonoBehaviour
     public SpriteRenderer fadeSprite;
     public TextMeshProUGUI gameOverText;
     private GameManager _gameManager;
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.SetActive(false);
+            FadeAndLoadGameOver();
+            
+        }
+    }
 
     private void Start()
     {
         Instance = this;
         _gameManager = GameManager.Instance;
 
+    }
+    
+    public void FadeAndLoadGameOver()
+    {
+        StartCoroutine(FadeToGameOver());
     }
 
     public IEnumerator FadeToGameOver()
@@ -51,20 +66,5 @@ public class FadeOut : MonoBehaviour
         yield return new WaitForSeconds(1f);
         
         _gameManager.GameOver();
-    }
-
-    public void FadeAndLoadGameOver()
-    {
-        StartCoroutine(FadeToGameOver());
-    }
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.SetActive(false);
-            FadeAndLoadGameOver();
-            
-        }
     }
 }

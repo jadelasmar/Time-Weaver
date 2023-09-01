@@ -38,4 +38,14 @@ public class MovingEnemy : MonoBehaviour
             _sprite.flipX = (_moveDirection == 1);
         }
     }
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.transform.GetComponent<Player>().EnableMovement(false);
+            gameObject.SetActive(false);
+            FadeOut.Instance.FadeAndLoadGameOver();
+        }
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement2D : MonoBehaviour
 {
-    public CharacterController2D controller;
+    public PlayerController2D controller;
     public bool canMove;
     
     private Animator _animator;

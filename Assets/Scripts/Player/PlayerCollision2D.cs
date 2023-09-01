@@ -12,12 +12,5 @@ public class PlayerCollision2D : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Obstacle"))
-        {
-            FadeOut.Instance.FadeAndLoadGameOver();
-            GetComponent<Player>().EnableMovement(false);
-        }
-    }
+    
 }

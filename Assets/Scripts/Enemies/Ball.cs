@@ -64,6 +64,7 @@ public class Ball : MonoBehaviour
 
     private void PlayerGameOver()
     {
+        FadeOut.Instance.FadeAndLoadGameOver();
         GameManager.Instance.GameOver();
     }
 

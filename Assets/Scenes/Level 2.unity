@@ -705,9 +705,10 @@ GameObject:
   - component: {fileID: 480541907}
   - component: {fileID: 480541909}
   - component: {fileID: 480541908}
+  - component: {fileID: 480541910}
   m_Layer: 0
   m_Name: Plant (3)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -824,6 +825,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &480541910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480541906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51967322872cd947b8d6fb778a422aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &493690852
 GameObject:
   m_ObjectHideFlags: 0
@@ -15109,9 +15122,10 @@ GameObject:
   - component: {fileID: 646316021}
   - component: {fileID: 646316023}
   - component: {fileID: 646316022}
+  - component: {fileID: 646316024}
   m_Layer: 0
   m_Name: Plant (1)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15228,6 +15242,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &646316024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646316020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51967322872cd947b8d6fb778a422aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &687929319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19847,9 +19873,10 @@ GameObject:
   - component: {fileID: 808788111}
   - component: {fileID: 808788113}
   - component: {fileID: 808788112}
+  - component: {fileID: 808788114}
   m_Layer: 0
   m_Name: Plant (2)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19966,6 +19993,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &808788114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808788110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51967322872cd947b8d6fb778a422aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &929991070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2557709665257529369, guid: 91e6cec402da71943b750d7514ce47d3, type: 3}
@@ -20856,7 +20895,7 @@ GameObject:
   - component: {fileID: 1496438895}
   m_Layer: 0
   m_Name: Slug
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24898,7 +24937,7 @@ GameObject:
   - component: {fileID: 2040506199}
   m_Layer: 0
   m_Name: Slug (1)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25641,9 +25680,10 @@ GameObject:
   - component: {fileID: 7398708074800209164}
   - component: {fileID: 3660205333615369502}
   - component: {fileID: 7398708074800209165}
+  - component: {fileID: 7398708074800209166}
   m_Layer: 0
   m_Name: Plant
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26148,6 +26188,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7398708074800209166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795237365572355026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51967322872cd947b8d6fb778a422aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7616609957385480577
 RectTransform:
   m_ObjectHideFlags: 0
