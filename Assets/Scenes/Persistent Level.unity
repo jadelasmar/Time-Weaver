@@ -401,6 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewTarget: {fileID: 1930713373}
   parallax: 0.1
+  lockY: 0
 --- !u!212 &216657005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2714,6 +2715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewTarget: {fileID: 1930713373}
   parallax: 0.075
+  lockY: 0
 --- !u!212 &675404195
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3937,6 +3939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewTarget: {fileID: 1930713373}
   parallax: -0.05
+  lockY: 0
 --- !u!212 &1527136491
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4000,7 +4003,7 @@ PrefabInstance:
     - target: {fileID: 128077477611267575, guid: 31d81e30cda1c6849ab7d37675ba5b02, type: 3}
       propertyPath: fadeSprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1684676947}
     - target: {fileID: 3788661288934596126, guid: 31d81e30cda1c6849ab7d37675ba5b02, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4011,7 +4014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3788661288934596126, guid: 31d81e30cda1c6849ab7d37675ba5b02, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3788661288934596126, guid: 31d81e30cda1c6849ab7d37675ba5b02, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4070,6 +4073,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31d81e30cda1c6849ab7d37675ba5b02, type: 3}
+--- !u!212 &1684676947 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2479698238004283308, guid: 31d81e30cda1c6849ab7d37675ba5b02, type: 3}
+  m_PrefabInstance: {fileID: 1684676946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1701446100
 GameObject:
   m_ObjectHideFlags: 0
